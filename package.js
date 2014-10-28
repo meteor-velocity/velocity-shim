@@ -4,15 +4,13 @@
 Package.describe({
   name: 'velocity:shim',
   summary: 'A package to expose the Velocity package to the global object.',
-  version: '0.0.1',
+  version: '0.0.2',
   git: 'https://github.com/meteor-velocity/velocity-shim.git',
   debugOnly: true
 });
 
-Npm.depends({
-  'lodash': '2.4.1'
-});
-
 Package.on_use(function (api) {
-  api.add_files('shim.js', 'server');
+  var BOTH = ['server', 'client'];
+  api.use('underscore', BOTH);
+  api.add_files('shim.js', BOTH);
 });
