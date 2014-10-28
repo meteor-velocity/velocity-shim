@@ -11,6 +11,6 @@ Package.describe({
 
 Package.on_use(function (api) {
   var BOTH = ['server', 'client'];
-  api.use('underscore', BOTH);
+  api.use('underscore@1.0.1', BOTH);
   api.add_files('shim.js', BOTH);
 });
