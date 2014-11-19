@@ -4,7 +4,7 @@
 Package.describe({
   name: 'velocity:shim',
   summary: 'A package to expose the Velocity package to the global object.',
-  version: '0.0.2',
+  version: '0.0.3',
   git: 'https://github.com/meteor-velocity/velocity-shim.git',
   debugOnly: true
 });
