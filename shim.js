@@ -1,11 +1,13 @@
 // Make Velocity globals available in this package
 var packageContext = this,
     packages       = [
-      'velocity:core',
-      'velocity:node-soft-mirror'
+      'velocity:core'
     ];
-_.forEach(packages, function (package) {
-  _.forEach(Package[package], function (globalValue, globalName) {
-    packageContext[globalName] = globalValue;
-  });
+_.forEach(packages, function (packageName) {
+  var packageGlobals = Package[packageName];
+  if (packageGlobals) {
+    _.forEach(packageGlobals, function (globalValue, globalName) {
+      packageContext[globalName] = globalValue;
+    });
+  }
 });
